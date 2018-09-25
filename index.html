@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="UTF-8">
+<title>Portal Cautivo - Vouchers</title>
+<meta name="author" content="Roberto E. Murillo D." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Autenticación con Vouchers con Portal Cautivo" />
+<meta name="keywords" content="autenticación con vouchers, vouchers, portal cautivo, autenticación con portal cautivo" />
+<link rel="stylesheet" type="text/css" href="captiveportal-estilo.css" media="screen" />
+</head>
+<body>
+<div class="contenedor">
+	<header>
+		<h1>Portal Cautivo</h1>
+		<h2>Autenticación con Vouchers</h2>
+	</header>
+	<main>
+		<h3>Ingresa su Ticket/Voucher</h3>
+		<form method="post" action="$PORTAL_ACTION$" onsubmit="return validacion_tickets()" enctype="application/x-www-form-urlencoded">
+			<label for="ticket">Ticket:</label>
+			<input type="text" id="ticket" name="auth_voucher" placeholder="Clave del Voucher... " />
+			<span id="ticket_error" class="mensaje_error"></span>
+			<div class="botones">
+				<input type="hidden" name="redirurl" value="$PORTAL_REDIRURL$" />
+				<input type="hidden" name="zone" value="$PORTAL_ZONE$" />
+				<input type="submit" name="accept" value="Acceder" />
+				<input type="button" id="borrar" value="Borrar Todo" />
+			</div>
+		</form>
+	</main>
+	<footer>
+		<p>Creado por <span>Roberto E. Murillo D.</span></p>
+		<p>Generado por <span>pfSense 2.3.5 i386</span></p>
+	</footer>
+</div>
+<script type="text/javascript" src="captiveportal-validacion_tickets.js"></script>
+</body>
+</html>
